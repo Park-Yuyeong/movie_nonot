@@ -6,16 +6,16 @@ const options = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZDIzYzU3MWQ5M2FjZTdiYWQ3YTFkZWE3NWI0YzhhYiIsInN1YiI6IjY2MjY0NjQ0Y2I2ZGI1MDE2M2FlZTI3MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FfCrs2-T_js5Cuud3FBlI-obOWez3bf5_bj5KGmuVC0",
   },
 };
+
 const $content = document.getElementById("eiga"); //전체 내용을 담을 컴포넌트
-const $input = document.getElementById("searchText"); //검색어입력창
-const $handleSearch = document.getElementById("handleSearch"); //검색어 실행버튼
-const $mark = document.getElementById("representive-mark"); // 메인아이콘
-let movies = []; //필터된 api로부터 받아온 데이터를 저장하는 저장소
+
 const apiUrl =
   "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
 
-/** API불러오는 함수 */
-const callGetMoviesAPI = async () => {
+export let movies = []; // 필터된 api로부터 받아온 데이터를 저장하는 저장소
+
+// API불러오는 함수
+export const callGetMoviesAPI = async () => {
   try {
     const response = await fetch(apiUrl, options);
     const data = await response.json();
@@ -37,10 +37,9 @@ const callGetMoviesAPI = async () => {
     console.error(err);
   }
 };
-callGetMoviesAPI();
 
-/**데이터 필터링 함수 */
-const displayMovieData = (movie_data) => {
+// 데이터 필터링 함수
+export const displayMovieData = (movie_data) => {
   if (!movie_data.length) {
     $content.innerHTML = `<h3 id="error">해당 검색어에 대한 데이터가 존재하지 않습니다!</h3>`;
     return;
@@ -63,26 +62,3 @@ const displayMovieData = (movie_data) => {
       `);
   }, "");
 };
-
-/** 검색어 함수 */
-const search_movie = (e) => {
-  e.preventDefault();
-  const searchText = $input.value.toLowerCase();
-  if (!searchText.length) alert("검색창에 글자를 입력해주세요");
-  else {
-    const filteredMovies = movies.filter((movie) =>
-      movie.title.toLowerCase().includes(searchText)
-    );
-    $content.innerHTML = "";
-    displayMovieData(filteredMovies);
-  }
-};
-$handleSearch.addEventListener("click", search_movie);
-$input.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") search_movie(e);
-});
-
-/** 메인으로 돌아가기 */
-$mark.addEventListener("click", () => {
-  window.location.href = "/public/index.html";
-});
