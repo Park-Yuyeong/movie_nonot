@@ -1,4 +1,5 @@
-import { movies, displayMovieData } from "./movieAPI.js";
+import { movies } from "./movieAPI.js";
+import { Movie } from "./movieData.js";
 
 /** 검색어 함수 */
 const $content = document.getElementById("eiga"); //전체 내용을 담을 컴포넌트
@@ -13,6 +14,6 @@ export const search_movie = (e) => {
       movie.title.toLowerCase().includes(searchText)
     );
     $content.innerHTML = "";
-    displayMovieData(filteredMovies);
+    filteredMovies.forEach((i) => i.drawMovieCard());
   }
 };

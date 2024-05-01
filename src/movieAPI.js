@@ -1,3 +1,5 @@
+import { Movie } from "./movieData.js";
+
 const options = {
   method: "GET",
   headers: {
@@ -20,45 +22,24 @@ export const callGetMoviesAPI = async () => {
     const response = await fetch(apiUrl, options);
     const data = await response.json();
 
-    const filteredMovies = data.results.map((movies) => ({
-      //필요한 정보만 filteredMovies에 넣는다
-      original_language: movies.original_language,
-      title: movies.title,
-      overview: movies.overview,
-      vote_average: movies.vote_average,
-      poster_path: movies.poster_path,
-      id: movies.id,
-    }));
+    console.log(data.results);
+
+    const filteredMovies = data.results.map(
+      (i) =>
+        new Movie(
+          i.original_language,
+          i.title,
+          i.overview,
+          i.vote_average,
+          i.poster_path,
+          i.id,
+          i.release_date
+        )
+    );
     movies = filteredMovies;
-    displayMovieData(filteredMovies);
-    console.log(filteredMovies);
+    movies.forEach((i) => i.drawMovieCard());
   } catch (err) {
     $content.innerHTML = `<h3 id="error">API 가져오는데 문제가 생겼습니다</h3>`;
     console.error(err);
   }
-};
-
-// 데이터 필터링 함수
-export const displayMovieData = (movie_data) => {
-  if (!movie_data.length) {
-    $content.innerHTML = `<h3 id="error">해당 검색어에 대한 데이터가 존재하지 않습니다!</h3>`;
-    return;
-  }
-  $content.innerHTML = movie_data.reduce((_movie_list, cur_movies) => {
-    let total = "☆☆☆☆☆";
-    let count = (cur_movies.vote_average / 2).toFixed(1);
-    total = "⭐".repeat(parseInt(count)) + total.slice(parseInt(count));
-
-    return (_movie_list += `
-      <div id="cardDiv" class="card" onclick="alert('영화 id : ${cur_movies.id}')">
-        <img src="https://image.tmdb.org/t/p/w500${cur_movies.poster_path}" id="img"/>
-        <div id="overviewDiv">
-          <p id="overview">${cur_movies.overview}</p>
-        </div>
-        <h3 id="title">${cur_movies.title}</h3>
-        <p id="vote">${total} (${count})</p>
-        <p id="language">language : ${cur_movies.original_language}</p>
-      </div>
-      `);
-  }, "");
 };

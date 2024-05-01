@@ -1,4 +1,4 @@
-import { callGetMoviesAPI, displayMovieData } from "./movieAPI.js";
+import { callGetMoviesAPI } from "./movieAPI.js";
 import { search_movie } from "./search.js";
 
 const options = {
