@@ -1,31 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const options = {
-        method: "GET",
-        headers: {
-            accept: "application/json",
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MTAyNzcxYTQ3YTI4YzIzMDk1OGE0NjJjYmQzMDA2OSIsInN1YiI6IjY2MjlmYTBlZDE4YjI0MDA5YmRlMDEwYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RmDcbNB7AxtkDNgTYr301oBdcuZiuniDqQyZ2emzlWo",
-        },
-    };
+const urlParams = new URLSearchParams(window.location.search);
+const detailMovieTitle = urlParams.get("title"); // 현재 상세페이지 영화 제목
 
-    const apiKey = "4102771a47a28c230958a462cbd30069";
-    const apiUrl = "https://api.themoviedb.org/3/movie/top_rated";
+const movie = JSON.parse(localStorage.getItem(detailMovieTitle));
+console.log(movie);
 
-    fetch(`${apiUrl}?api_key=${apiKey}`, options)
-        .then((response) => response.json())
-        .then((data) => {
-            const movie = data.results[0];
-            const contents = document.getElementById("contents");
-            contents.innerHTML = `
-                <img class="thumbnail" src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="">
-                <div>
-                    <div class="title">${movie.title}</div>
-                    <div class="grade">평점: ${movie.vote_average}</div>
-                    <div class="release_date">개봉일: ${movie.release_date}</div>
-                    <div class="description">${movie.overview}</div>
-                </div>
-            `;
-        })
-        .catch((error) => {
-            console.error(error);
-        });
-});
+const $thumbnail = document.getElementById("thumbnail");
+const $title = document.getElementById("title");
+const $description = document.getElementById("description");
+const $grade = document.getElementById("grade");
+const $language = document.getElementById("language"); // detail.html에 없음! 추가필요
+const $release = document.getElementById("release_date");
+
+$thumbnail.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
+$title.innerText = movie.title;
+$description.innerText = movie.overview;
+
+let total = "☆☆☆☆☆";
+let count = (movie.vote_average / 2).toFixed(1);
+total = "⭐".repeat(parseInt(count)) + total.slice(parseInt(count));
+
+$grade.innerText = total + " " + count;
+// $language.innerText += " " + movie.original_language;
+$release.innerText += " " + movie.release_date;
