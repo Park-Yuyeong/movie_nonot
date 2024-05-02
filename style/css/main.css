@@ -25,11 +25,7 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background: linear-gradient(
-    to bottom,
-    var(--background-color),
-    var(--white-color)
-  );
+  background: linear-gradient(to bottom, var(--background-color), var(--white-color));
   z-index: 5;
 }
 .search-div {
