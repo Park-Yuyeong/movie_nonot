@@ -37,7 +37,7 @@ const callGetCommentData = () => {
 
     let html = `
     <div data-index="${index}">
-      <form id="confirmDiv">
+      <form action="#" id="confirmDiv">
       <h4>${new_username} <span class="text-sub">${cur.date}</span></h4>
       <button class="btn-edit" data-action="delete" data-index="${index}" >삭제</button>
       <button class="btn-edit" data-action="modify" data-index="${index}" >수정</button>
@@ -57,7 +57,8 @@ const initComments = async () => {
   window.onload = initComments;
 
 /**댓글 달기 */
-const handleSendComment = () => {
+const handleSendComment = (e) => {
+    e.preventDefault();
   let newComment = {
     username: $input_user_name.value,
     userpw: $input_user_password.value,
@@ -79,6 +80,8 @@ const handleSendComment = () => {
     else if (error.userpw) alert("비밀번호를 입력해주세요.");
     else if (error.content) alert("리뷰 내용을 입력해주세요.");
   }
+  callGetCommentData();
+  $input_user_name.value =$input_user_password.value = $input_comment.value = '';
 };
 $button_comment.addEventListener("click", handleSendComment);
 
@@ -91,6 +94,7 @@ const handleDateFilter = () => {
 
 /** 각 확인 버튼에 이벤트 리스너 등록 */
 $content_comment.addEventListener("click", (e) => {
+    e.preventDefault();
   if (e.target.classList.contains("btn-edit")) {
     const action = e.target.dataset.action;
     const index = e.target.dataset.index;
@@ -116,6 +120,8 @@ const handleDeleteComment = (parentDiv) => {
   localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(data));
 
   alert("리뷰가 성공적으로 삭제되었습니다!");
+  callGetCommentData();
+
 };
 
 /**댓글 수정 */
@@ -127,7 +133,7 @@ const handleModifyComment = (index, parentDiv) => {
     return;
   }
 
-  parentDiv.innerHTML += `<form>
+  parentDiv.innerHTML += `<form action="#">
             <input type="text" placeholder="수정하실 내용을 입력해주세요" id="input-modify-${index}" value="${data.comments[id].content}"/>
             <button class="btn btn-modify" id="button-confirm-${index}">확인</button>
             <button class="btn btn-modify" id="button-cancel-${index}">취소</button>
@@ -140,6 +146,7 @@ const handleModifyComment = (index, parentDiv) => {
     localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(data));
 
     alert("성공적으로 수정되었습니다!");
+    callGetCommentData();
   });
   const button_cancel = document.getElementById(`button-cancel-${index}`);
   button_cancel.addEventListener("click", () => {
