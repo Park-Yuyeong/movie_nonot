@@ -15,17 +15,22 @@ const callGetCommentData = () => {
   $content_comment.innerHTML = comments.reduce((prev, cur, index) => {
     //작성자 이름은 두글자 이상이어야하고 두글자는 이름 다보이고 그 위로는 *로 나타남
     let new_username = cur.username.slice(0,2) + "*".repeat(cur.username.length -2);
-    return ($content_comment.innerHTML += `
-  <div data-index="${index}">
-    <form id="confirmDiv">
-    <h4>${new_username}님 <span class="text-sub">(${cur.date})</span></h4>
-    <button class="btn-edit" data-action="modify" data-index="${index}" >수정</button><span> | </span>
-    <button class="btn-edit" data-action="delete" data-index="${index}" >삭제</button>
-    </form>
-    <p>${cur.content}</p>
-  </div>
-`);
+
+    let html = `
+    <div data-index="${index}">
+      <form id="confirmDiv">
+      <h4>${new_username} <span class="text-sub">${cur.date}</span></h4>
+      <button class="btn-edit" data-action="delete" data-index="${index}" >삭제</button>
+      <button class="btn-edit" data-action="modify" data-index="${index}" >수정</button>
+      </form>
+      <span>${cur.content}</span>
+  `;
+   if(index !== comments.length -1) html += `<hr class="hr"/>`;
+   html +=`</div>`;
+
+    return (prev + html);
   }, "");
+
 };
 window.onload = callGetCommentData();
 

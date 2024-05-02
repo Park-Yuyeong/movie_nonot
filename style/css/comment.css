@@ -12,7 +12,9 @@ input,textarea{
 }
 .btn-edit{
     border:none;
+    padding:10px;
     background-color:var(--white-color);
+    color:var(--grey-color);
     cursor:pointer;
 }
 .text-sub{
@@ -21,8 +23,9 @@ input,textarea{
     font-weight: normal;
 }
 #confirmDiv{
-   display: flex;
+    display: flex;
     align-items: center;
+    height:40px;
     h4{
         flex-grow: 1;
     }
@@ -35,13 +38,15 @@ input,textarea{
     display: flex;
     align-items: center;
     padding:5px;
-    
 }
 #input-comment{
     flex-grow:1;
     margin-right: 5px;
 }
-
+.hr{
+    margin-top: 30px;
+    border: 1px solid var(--lightgrey-color);
+}
 @media screen and (max-width:568px) {
     .parent-comment{
         width:100%;
