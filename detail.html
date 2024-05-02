@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>영화 상세 / 리뷰 작성</title>
     <link rel="stylesheet" href="./style/css/detail.css" />
     <link rel="stylesheet" href="./style/css/reset.css" />
-    <script type="module" src="./src/detail.js" defer></script>
-</head>
-<body>
-<!--  header area  -->
-<div class="header_wrapper">
-    <h1 class="logo">LOGO</h1>
-    <div class="search_input_wrapper">
+    <script type="module" src="./src/detail.js"></script>
+  </head>
+  <body>
+    <!--  header area  -->
+    <div class="header_wrapper">
+      <h1 class="logo">LOGO</h1>
+      <div class="search_input_wrapper">
         <form id="search_form">
-            <label for="search" class="search">
-                <input type="text" id="search" placeholder="영화 제목을 입력해 주세요.">
-            </label>
-            <button id="search_button">검색</button>
+          <label for="search" class="search">
+            <input type="text" id="search" placeholder="영화 제목을 입력해 주세요." />
+          </label>
+          <button id="search_button">검색</button>
         </form>
+      </div>
     </div>
-</div>
 
-<!--  contents area -->
-<div class="center_wrapper">
-        <div id="contents" class="contents">
-            
+    <!--  contents area -->
+    <div class="center_wrapper">
+      <div id="contents" class="contents">
+        <img
+          class="thumbnail"
+          id="thumbnail"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_5lsZDN7j-YDlrEpupBOTwcNFxsa4puKyVW5g22cOB2WigVnM06932UkUaA&s"
+          alt="이미지를 불러올 수 없습니다."
+        />
+        <div>
+          <div class="title" id="title"></div>
+          <div class="grade" id="grade">평점:</div>
+          <div class="release_date" id="release_date">개봉일:</div>
+          <div class="description" id="description"></div>
         </div>
-</div>
-</body>
+      </div>
+    </div>
+  </body>
 </html>
