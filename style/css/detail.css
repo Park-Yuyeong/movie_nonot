@@ -6,9 +6,11 @@
   padding: 20px;
 }
 
-.header_wrapper h1 {
+.header_wrapper .navigation {
+  text-decoration: none;
   font-size: 57px;
   font-weight: 700;
+  color: #000000;
 }
 
 .header_wrapper .search_input_wrapper {
@@ -19,10 +21,6 @@
 
 .header_wrapper input {
   padding: 3px;
-}
-
-.header_wrapper button {
-  cursor: pointer;
 }
 
 .center_wrapper {
@@ -56,6 +54,12 @@
 }
 
 .center_wrapper .contents .grade {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.center_wrapper .contents .language {
   font-size: 28px;
   font-weight: 400;
   margin-bottom: 20px;

@@ -8,7 +8,7 @@ const $thumbnail = document.getElementById("thumbnail");
 const $title = document.getElementById("title");
 const $description = document.getElementById("description");
 const $grade = document.getElementById("grade");
-const $language = document.getElementById("language"); // detail.html에 없음! 추가필요
+const $language = document.getElementById("language");
 const $release = document.getElementById("release_date");
 
 $thumbnail.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
@@ -21,5 +21,5 @@ let count = (movie.vote_average / 2).toFixed(1);
 total = "⭐".repeat(parseInt(count)) + total.slice(parseInt(count));
 
 $grade.innerText = total + " " + count;
-// $language.innerText += " " + movie.original_language;
+$language.innerText += " " + movie.original_language;
 $release.innerText += " " + movie.release_date;
