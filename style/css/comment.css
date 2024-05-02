@@ -1,6 +1,7 @@
 input,textarea{
     padding:10px;
     outline: none;
+    resize: none;
 }
 .btn{
     padding:10px;

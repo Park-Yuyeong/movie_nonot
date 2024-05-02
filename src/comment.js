@@ -64,7 +64,7 @@ $button_comment.addEventListener("click", handleSendComment);
 const handleDateFilter = () => {
   const today = new Date().toString().split(" ").slice(1, 5);
   let month = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  return `${today[2]}-0${month.indexOf(today[0])}-${today[1]} ${today[3]}`;
+  return `${today[2]}-0${month.indexOf(today[0])}-${today[1]}`;
 };
 
 /** 각 확인 버튼에 이벤트 리스너 등록 */
