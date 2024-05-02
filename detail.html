@@ -6,6 +6,8 @@
     <title>영화 상세 / 리뷰 작성</title>
     <link rel="stylesheet" href="./style/css/detail.css" />
     <link rel="stylesheet" href="./style/css/reset.css" />
+    <link href="style/css/comment.css" rel="stylesheet"/>
+    <link href="style/css/color.css" rel="stylesheet" />
     <script type="module" src="./src/detail.js"></script>
   </head>
   <body>
@@ -39,5 +41,22 @@
         </div>
       </div>
     </div>
+
+  <!--  comment area -->
+    <div class="parent-comment">
+      <form>
+          <div class="comment-input-container">
+              <input type="text" placeholder="작성자 이름을 적어주세요" id="input-user-name" style="margin-right:5px"/>
+              <input type="text" placeholder="비밀번호를 적어주세요" id="input-user-password"/>
+          </div>
+          <div class="comment-input-container">
+              <textarea type="text" placeholder="리뷰 내용을 적어주세요" id="input-comment"></textarea>
+              <button class="btn" id="button-comment">리뷰작성</button>
+          </div>
+          
+      </form>
+      <div id="content-comment"></div>
+  </div>
+  <script src="/src/comment.js"></script>
   </body>
 </html>
