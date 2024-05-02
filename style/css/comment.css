@@ -1,0 +1,51 @@
+input,textarea{
+    padding:10px;
+    outline: none;
+}
+.btn{
+    padding:10px;
+    border:none;
+    background-color: var(--black-color);
+    border-radius: 10px;
+    color:var(--white-color);
+    cursor: pointer;
+}
+.btn-edit{
+    border:none;
+    background-color:var(--white-color);
+    cursor:pointer;
+}
+.text-sub{
+    color:var(--grey-color);
+    font-size: 14px;
+    font-weight: normal;
+}
+#confirmDiv{
+   display: flex;
+    align-items: center;
+    h4{
+        flex-grow: 1;
+    }
+}
+.parent-comment{
+    width:70%;
+    margin:auto;
+}
+.comment-input-container {
+    display: flex;
+    align-items: center;
+    padding:5px;
+    
+}
+#input-comment{
+    flex-grow:1;
+    margin-right: 5px;
+}
+
+@media screen and (max-width:568px) {
+    .parent-comment{
+        width:100%;
+        
+    }
+
+}

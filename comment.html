@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>댓글달기</title>
+    <link href="style/css/comment.css" rel="stylesheet"/>
+    <link href="style/css/color.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="parent-comment">
+        <form>
+            <div class="comment-input-container">
+                <input type="text" placeholder="작성자 이름을 적어주세요" id="input-user-name" style="margin-right:5px"/>
+                <input type="text" placeholder="비밀번호를 적어주세요" id="input-user-password"/>
+            </div>
+            <div class="comment-input-container">
+                <textarea type="text" placeholder="리뷰 내용을 적어주세요" id="input-comment"></textarea>
+                <button class="btn" id="button-comment">리뷰작성</button>
+            </div>
+            
+        </form>
+        <div id="content-comment"></div>
+    </div>
+    
+    <script src="/src/comment.js"></script>
+</body>
+</html>
