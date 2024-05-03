@@ -1,3 +1,5 @@
+import { search_movie } from "./search.js";
+
 const urlParams = new URLSearchParams(window.location.search);
 const detailMovieTitle = urlParams.get("title"); // 현재 상세페이지 영화 제목
 
@@ -23,3 +25,15 @@ total = "⭐".repeat(parseInt(count)) + total.slice(parseInt(count));
 $grade.innerText = total + " " + count;
 $language.innerText += " " + movie.original_language;
 $release.innerText += " " + movie.release_date;
+
+// 상세페이지 검색 기능 추가
+const $handleSearch = document.getElementById("search_form");
+const $searchText = document.getElementById("searchText").value.toLowerCase();
+
+$handleSearch.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const searchText = $searchText.value.toLowerCase();
+  let contentMovie = search_movie(searchText);
+  //   $content.innerHTML = "";
+  //   displayMovieData(contentMovie);
+});
