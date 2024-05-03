@@ -8,9 +8,6 @@
 
 .header_wrapper .navigation {
   text-decoration: none;
-  font-size: 57px;
-  font-weight: 700;
-  color: #000000;
 }
 
 .header_wrapper .search_input_wrapper {
@@ -31,6 +28,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 90px;
 }
 
 .center_wrapper .contents {

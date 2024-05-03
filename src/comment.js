@@ -14,7 +14,7 @@ const addCommentsObject= async ()=>{
       localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(data));
   }
 
- callGetCommentData()
+ callGetCommentData();
 }
 /**댓글 불러오기 및 사용자 확인*/
 const callGetCommentData = () => {

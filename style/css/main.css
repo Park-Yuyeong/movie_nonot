@@ -28,6 +28,7 @@ input {
   background: linear-gradient(to bottom, var(--background-color), var(--white-color));
   z-index: 5;
 }
+
 .search-div {
   position: relative;
 }
@@ -47,6 +48,8 @@ input {
 #representive-mark {
   font-family: "Pretendard-extrabold";
   cursor: pointer;
+  width: 70px;
+  height: 70px;
 
   &:hover {
     color: var(--white-color);
