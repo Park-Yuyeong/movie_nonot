@@ -1,29 +1,3 @@
-.header_wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #d9d9d9;
-  padding: 20px;
-}
-
-.header_wrapper .navigation {
-  text-decoration: none;
-}
-
-.header_wrapper .search_input_wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.header_wrapper input {
-  padding: 3px;
-}
-
-.header_wrapper button {
-  cursor: pointer;
-}
-
 .center_wrapper {
   width: 100%;
   max-width: 1200px;
