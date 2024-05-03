@@ -9,8 +9,11 @@ const $content = document.getElementById("eiga"); //전체 내용을 담을 컴�
 
 const movies = JSON.parse(localStorage.getItem("movies"));
 
-if (JSON.parse(localStorage.getItem("movies")) === null) callGetMoviesAPI();
-else {
+// 이미 불러왔던 영화 데이터가 있으면 안 불러오도록
+if (JSON.parse(localStorage.getItem("movies")) === null) {
+  console.log("----영화 데이터를 불러옵니다----");
+  callGetMoviesAPI();
+} else {
   const filteredMovieData = movies.map((movie) => JSON.parse(localStorage.getItem(movie)));
   displayMovieData(filteredMovieData);
 }
