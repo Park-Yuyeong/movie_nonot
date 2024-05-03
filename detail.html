@@ -6,21 +6,24 @@
     <title>영화 상세 / 리뷰 작성</title>
     <link rel="stylesheet" href="./style/css/detail.css" />
     <link rel="stylesheet" href="./style/css/reset.css" />
+    <link href="style/css/main.css" rel="stylesheet" />
+    <link href="style/css/color.css" rel="stylesheet" />
     <script type="module" src="./src/detail.js"></script>
+    <script src="./src/main.js" type="module"></script>
   </head>
   <body>
+
     <!--  header area  -->
-    <div class="header_wrapper">
-      <a class="navigation" href="./index.html"><h1 class="logo">LOGO</h1></a>
-      <div class="search_input_wrapper">
-        <form id="search_form">
-          <label for="search" class="search">
-            <input type="text" id="searchText" placeholder="영화 제목을 입력해 주세요." autofocus />
-          </label>
-          <button id="search_button">검색</button>
-        </form>
-      </div>
-    </div>
+    <nav class="menubar-top">
+      <a class="navigation" href="./index.html">
+        <img id="representive-mark" src="style/image/icon.png" />
+      </a>
+        
+      <form class="search-div" id="search_form">
+        <input type="text" placeholder="search..." id="searchText" autofocus />
+        <img src="style/image/search_icon.png" class="icon-search" id="handleSearch" alt="검색 아이콘" />
+      </form>
+    </nav>
 
     <!--  contents area -->
     <div class="center_wrapper">
