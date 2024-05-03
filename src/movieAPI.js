@@ -63,7 +63,7 @@ export const displayMovieData = (movie_data) => {
   }, "");
 };
 
-// movie 데이터 로컬 스토리지 이용 저장
+// movie 데이터 로컬 스토리지 저장
 // 상세 페이지에서 불러올 영화 데이터 저장
 const saveMovieData = (movies) => {
   let moviesTitle = []; // 영화 타이틀만 담은 배열 -> 검색 시 사용
