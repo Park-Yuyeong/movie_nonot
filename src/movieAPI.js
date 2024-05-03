@@ -39,8 +39,9 @@ export const callGetMoviesAPI = async () => {
 
 // 데이터 필터링 함수
 export const displayMovieData = (movie_data) => {
+  console.log(movie_data);
   if (!movie_data.length) {
-    $content.innerHTML = `<h3 id="error">해당 검색어에 대한 데이터가 존재하지 않습니다!</h3>`;
+    $content.innerHTML = `<h3 id="error">해당 검색어에 대한 데이터가 존재하지 않습니다! </h3>`;
     return;
   }
   $content.innerHTML = movie_data.reduce((_movie_list, cur_movies) => {

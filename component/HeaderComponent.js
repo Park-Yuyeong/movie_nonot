@@ -32,13 +32,21 @@ class HeaderComponent extends HTMLElement {
     $searchButton.addEventListener("click", (e) => {
       e.preventDefault();
       const searchText = $searchText.value.toLowerCase();
-      window.location.href = `index.html?search=${searchText}`;
+      if (!searchText.length) {
+        alert("검색창에 글자를 입력해주세요");
+      } else {
+        window.location.href = `index.html?search=${searchText}`;
+      }
     });
 
     $searchForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const searchText = $searchText.value.toLowerCase();
-      window.location.href = `index.html?search=${searchText}`;
+      if (!searchText.length) {
+        alert("검색창에 글자를 입력해주세요");
+      } else {
+        window.location.href = `index.html?search=${searchText}`;
+      }
     });
   }
 }
