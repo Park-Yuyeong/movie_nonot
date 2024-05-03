@@ -4,27 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>영화 상세 / 리뷰 작성</title>
-    <link rel="stylesheet" href="./style/css/detail.css" />
     <link rel="stylesheet" href="./style/css/reset.css" />
+    <link rel="stylesheet" href="./style/css/detail.css" />
     <link href="style/css/main.css" rel="stylesheet" />
     <link href="style/css/color.css" rel="stylesheet" />
     <script type="module" src="./src/detail.js"></script>
-    <script src="./src/main.js" type="module"></script>
+    <script type="module" src="./component/HeaderComponent.js"></script>
   </head>
   <body>
-
-    <!--  header area  -->
-    <nav class="menubar-top">
-      <a class="navigation" href="./index.html">
-        <img id="representive-mark" src="style/image/icon.png" />
-      </a>
-        
-      <form class="search-div" id="search_form">
-        <input type="text" placeholder="search..." id="searchText" autofocus />
-        <img src="style/image/search_icon.png" class="icon-search" id="handleSearch" alt="검색 아이콘" />
-      </form>
-    </nav>
-
+    <movie-header></movie-header>
     <!--  contents area -->
     <div class="center_wrapper">
       <div id="contents" class="contents">
