@@ -51,3 +51,9 @@
   font-size: 24px;
   font-weight: 400;
 }
+
+.hide {
+  display: none;
+}
+
+/*html에서 만들어둔 안내메세지를 숨겨준다 display: none 가 default*/

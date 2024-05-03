@@ -12,6 +12,8 @@
     <link href="style/css/color.css" rel="stylesheet" />
     <script type="module" src="./src/detail.js"></script>
     <script type="module" src="./component/HeaderComponent.js"></script>
+    <script type="module" src="./src/validation.js"></script>
+
   </head>
   <body>
     <movie-header></movie-header>
@@ -36,14 +38,18 @@
 
     <!--  comment area -->
     <div class="parent-comment">
-      <form>
+      <form id ="commentTarget">
         <div class="comment-input-container">
           <input type="text" placeholder="작성자 이름을 적어주세요" id="input-user-name" style="margin-right: 5px" />
+          <div class="name-failure-message hide font">작성자명을 세글자이상 입력해주세요</div>
           <input type="text" placeholder="비밀번호를 적어주세요" id="input-user-password" />
+          <div class="pw-failure-message hide font">숫자 4글자를 입력해주세요</div>
         </div>
         <div class="comment-input-container">
           <textarea type="text" placeholder="리뷰 내용을 적어주세요" id="input-comment"></textarea>
+          <div class="rv-failure-message hide font">리뷰를 10글자 이상 입력해주세요</div>
           <button class="btn" id="button-comment">리뷰작성</button>
+          
         </div>
       </form>
       <div id="content-comment"></div>
