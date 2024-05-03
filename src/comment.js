@@ -7,30 +7,22 @@ const $input_comment = document.getElementById("input-comment"); //댓글 인풋
 const $content_comment = document.getElementById("content-comment"); // 댓글 내용 담는 용
 const $button_comment = document.getElementById("button-comment"); //댓글 버튼
 let data = JSON.parse(localStorage.getItem(`${detailMovieTitle}`)); // 댓글 데이터
-
 /** 댓글 객체 추가 */
 const addCommentsObject= async ()=>{
-    if (!data.hasOwnProperty('comments')) {
-        const newObject = Object.assign({}, data, {
-          comments: []
-        });
-        localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(newObject));
-       
-    }
+  if (!data.hasOwnProperty('comments')) {
+      const newObject = Object.assign({}, data, {
+        comments: []
+      });
+      localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(newObject));
+  }
+ 
 }
 /**댓글 불러오기 및 사용자 확인*/
 const callGetCommentData = () => {
-    try {
-      if (!data.comments.length) {
+    if(!data.comments.length){
         $content_comment.innerHTML = '<h3>리뷰가 존재하지 않습니다! 리뷰를 남겨주세요</h3>';
-        return;
-      }
-      // 기존 코드 실행
-    } catch (error) {
-      console.error('Error:', error);
-      $content_comment.innerHTML = '<h3>리뷰 데이터를 불러오는 중 오류가 발생했습니다.</h3>';
+          return;
     }
-  
   $content_comment.innerHTML = data.comments.reduce((prev, cur, index) => {
     //작성자 이름은 두글자 이상이어야하고 두글자는 이름 다보이고 그 위로는 *로 나타남
     let new_username = cur.username.slice(0, 2) + "*".repeat(cur.username.length - 2);
@@ -49,12 +41,8 @@ const callGetCommentData = () => {
     return prev + html + `</div>`;
   }, "");
 };
-const initComments = async () => {
-    await addCommentsObject();
-    callGetCommentData();
-  };
   
-  window.onload = initComments;
+window.onload = callGetCommentData();
 
 /**댓글 달기 */
 const handleSendComment = (e) => {
