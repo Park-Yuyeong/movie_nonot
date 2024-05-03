@@ -10,12 +10,11 @@ let data = JSON.parse(localStorage.getItem(`${detailMovieTitle}`)); // 댓글 �
 /** 댓글 객체 추가 */
 const addCommentsObject= async ()=>{
   if (!data.hasOwnProperty('comments')) {
-      const newObject = Object.assign({}, data, {
-        comments: []
-      });
-      localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(newObject));
+    data.comments = []; // comments 키가 없는 경우 빈 배열 추가
+      localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(data));
   }
- 
+
+ callGetCommentData()
 }
 /**댓글 불러오기 및 사용자 확인*/
 const callGetCommentData = () => {
@@ -42,7 +41,7 @@ const callGetCommentData = () => {
   }, "");
 };
   
-window.onload = callGetCommentData();
+window.onload = addCommentsObject();
 
 /**댓글 달기 */
 const handleSendComment = (e) => {

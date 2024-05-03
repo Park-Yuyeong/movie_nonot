@@ -30,7 +30,7 @@ export const callGetMoviesAPI = async () => {
       release_date: movies.release_date
     }));
     displayMovieData(filteredMovies);
-    saveMovieData(filteredMovies)
+    saveMovieData(filteredMovies);
   } catch (err) {
     $content.innerHTML = `<h3 id="error">API 가져오는데 문제가 생겼습니다</h3>`;
     console.error(err);
@@ -69,13 +69,8 @@ const saveMovieData = (movies) => {
   let moviesTitle = []; // 영화 타이틀만 담은 배열 -> 검색 시 사용
 
   movies.forEach((movie) => {
-    let data = JSON.parse(JSON.stringify(movie)); // 기존 객체를 복제하여 새로운 객체 생성
-
-    if (!data.hasOwnProperty('comments')) {
-      data.comments = []; // comments 키가 없는 경우 빈 배열 추가
-    }
-
-    localStorage.setItem(movie.title, JSON.stringify(data)); // 수정된 객체를 로컬 스토리지에 저장
+    const data = JSON.stringify(movie);
+    localStorage.setItem(movie.title, data);
     moviesTitle.push(movie.title);
   });
 
