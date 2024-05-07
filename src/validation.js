@@ -40,23 +40,23 @@ window.onload = function () {
   };
 
   //입력값에 따른 버튼 활성화 비활성화. 초기 버튼은 disabled 되어있다.
-  //   userName.addEventListener("keyup", activeEvent);
-  //   userPassword.addEventListener("keyup", activeEvent);
-  //   reviewInput.addEventListener("keyup", activeEvent);
-  //   rvButton.addEventListener("click", errorEvent);
+  userName.addEventListener("keyup", activeEvent);
+  userPassword.addEventListener("keyup", activeEvent);
+  reviewInput.addEventListener("keyup", activeEvent);
+  // rvButton.addEventListener("click", errorEvent);
 
-  //   function activeEvent() {
-  //     switch (!(userName.value && userPassword.value && reviewInput.value)) {
-  //       case true:
-  //         console.log(userName.value);
-  //         rvButton.disabled = true;
-  //         break;
-  //       case false:
-  //         rvButton.disabled = false;
-  //         break;
-  //     }
-  //   }
-  //   function errorEvent() {
-  //     formWrap.classList.add("error"); > formWrap 설명 필요
-  //   }
+  function activeEvent() {
+    switch (!(userName.value && userPassword.value && reviewInput.value)) {
+      case true:
+        console.log(userName.value, reviewInput.value);
+        rvButton.disabled = true;
+        break;
+      case false:
+        rvButton.disabled = false;
+        break;
+    }
+  }
+  // function errorEvent() {
+  //   formWrap.classList.add("error"); // > formWrap 설명 필요
+  // }
 };
