@@ -43,7 +43,6 @@ window.onload = function () {
   userName.addEventListener("keyup", activeEvent);
   userPassword.addEventListener("keyup", activeEvent);
   reviewInput.addEventListener("keyup", activeEvent);
-  // rvButton.addEventListener("click", errorEvent);
 
   function activeEvent() {
     switch (!(userName.value && userPassword.value && reviewInput.value)) {
@@ -56,7 +55,4 @@ window.onload = function () {
         break;
     }
   }
-  // function errorEvent() {
-  //   formWrap.classList.add("error"); // > formWrap 설명 필요
-  // }
 };
