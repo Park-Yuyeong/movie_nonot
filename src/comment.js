@@ -8,20 +8,20 @@ const $content_comment = document.getElementById("content-comment"); // 댓글 �
 const $button_comment = document.getElementById("button-comment"); //댓글 버튼
 let data = JSON.parse(localStorage.getItem(`${detailMovieTitle}`)); // 댓글 데이터
 /** 댓글 객체 추가 */
-const addCommentsObject= async ()=>{
-  if (!data.hasOwnProperty('comments')) {
+const addCommentsObject = async () => {
+  if (!data.hasOwnProperty("comments")) {
     data.comments = []; // comments 키가 없는 경우 빈 배열 추가
-      localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(data));
+    localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(data));
   }
 
- callGetCommentData();
-}
+  callGetCommentData();
+};
 /**댓글 불러오기 및 사용자 확인*/
 const callGetCommentData = () => {
-    if(!data.comments.length){
-        $content_comment.innerHTML = '<h3>리뷰가 존재하지 않습니다! 리뷰를 남겨주세요</h3>';
-          return;
-    }
+  if (!data.comments.length) {
+    $content_comment.innerHTML = "<h3>리뷰가 존재하지 않습니다! 리뷰를 남겨주세요</h3>";
+    return;
+  }
   $content_comment.innerHTML = data.comments.reduce((prev, cur, index) => {
     //작성자 이름은 두글자 이상이어야하고 두글자는 이름 다보이고 그 위로는 *로 나타남
     let new_username = cur.username.slice(0, 2) + "*".repeat(cur.username.length - 2);
@@ -40,12 +40,12 @@ const callGetCommentData = () => {
     return prev + html + `</div>`;
   }, "");
 };
-  
+
 window.onload = addCommentsObject();
 
 /**댓글 달기 */
 const handleSendComment = (e) => {
-    e.preventDefault();
+  e.preventDefault();
   let newComment = {
     username: $input_user_name.value,
     userpw: $input_user_password.value,
@@ -53,9 +53,9 @@ const handleSendComment = (e) => {
     date: handleDateFilter()
   };
   let error = {
-    username: newComment.username.length <= 2, // 임시로 2글자 이하면 에러로 했지만 만약 바꾸고싶으면 글자수에 맞게 17번째 줄도 바꿔야 합니다
-    userpw: !newComment.userpw.length, // 비밀번호 유효성을 입력해주세요
-    content: !newComment.content.length // 리뷰 내용 몇글자까지 해야할지 정해주세요
+    username: newComment.username.length < 2, // 이름은 최소 두 자리
+    userpw: newComment.userpw.length !== 4 || isNaN(newComment.userpw), // 비밀번호는 숫자 4자리
+    content: newComment.content.length < 10 // 리뷰 내용 몇글자까지 해야할지 정해주세요 (10자리 이상)
   };
 
   // 에러가 없는 경우에만 실행
@@ -64,11 +64,11 @@ const handleSendComment = (e) => {
     localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(data));
   } else {
     if (error.username) alert("사용자 이름은 2글자 이상이어야 합니다.");
-    else if (error.userpw) alert("비밀번호를 입력해주세요.");
-    else if (error.content) alert("리뷰 내용을 입력해주세요.");
+    else if (error.userpw) alert("비밀번호는 숫자 4자리입니다.");
+    else if (error.content) alert("리뷰 내용은 10글자 이상 입력해주세요.");
   }
   callGetCommentData();
-  $input_user_name.value =$input_user_password.value = $input_comment.value = '';
+  $input_user_name.value = $input_user_password.value = $input_comment.value = "";
 };
 $button_comment.addEventListener("click", handleSendComment);
 
@@ -81,7 +81,7 @@ const handleDateFilter = () => {
 
 /** 각 확인 버튼에 이벤트 리스너 등록 */
 $content_comment.addEventListener("click", (e) => {
-    e.preventDefault();
+  e.preventDefault();
   if (e.target.classList.contains("btn-edit")) {
     const action = e.target.dataset.action;
     const index = e.target.dataset.index;
@@ -108,7 +108,6 @@ const handleDeleteComment = (parentDiv) => {
 
   alert("리뷰가 성공적으로 삭제되었습니다!");
   callGetCommentData();
-
 };
 
 /**댓글 수정 */
@@ -129,11 +128,15 @@ const handleModifyComment = (index, parentDiv) => {
 
   const button_confirm = document.getElementById(`button-confirm-${index}`);
   button_confirm.addEventListener("click", () => {
-    data.comments[id].content = document.getElementById(`input-modify-${index}`).value;
-    localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(data));
+    let = modifyComment = document.getElementById(`input-modify-${index}`).value;
 
-    alert("성공적으로 수정되었습니다!");
-    callGetCommentData();
+    if (modifyComment.length >= 10) {
+      data.comments[id].content = modifyComment;
+      localStorage.setItem(`${detailMovieTitle}`, JSON.stringify(data));
+
+      alert("성공적으로 수정되었습니다!");
+      callGetCommentData();
+    } else alert("리뷰 내용은 10글자 이상 입력해주세요.");
   });
   const button_cancel = document.getElementById(`button-cancel-${index}`);
   button_cancel.addEventListener("click", () => {

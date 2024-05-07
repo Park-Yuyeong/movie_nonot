@@ -5,7 +5,7 @@ class HeaderComponent extends HTMLElement {
       <nav class="menubar-top">
         <img id="representive-mark" src="style/image/icon.png" />
         <form class="search-div" id="search_form">
-          <input type="text" placeholder="search..." id="searchText" autofocus />
+          <input type="text" placeholder="search..." id="searchText" />
           <img src="style/image/search_icon.png" class="icon-search" id="handleSearch" alt="검색 아이콘" />
         </form>
       </nav>

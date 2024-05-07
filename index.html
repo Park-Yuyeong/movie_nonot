@@ -16,26 +16,36 @@
     <script src="./src/sort.js" type="module"></script>
     <script src="./src/main.js" type="module"></script>
     <script src="./component/HeaderComponent.js" type="module"></script>
-  </head>
-  <body>
-    <movie-header></movie-header>
 
-    <div class="dropdown">
-      <label for="sort">정렬:</label>
-      <select id="sort">
-        <option value="default">기본순</option>
-        <option value="title">제목순</option>
-        <option value="rating">별점높은순</option>
-      </select>
-    </div>
+    <body>
+      <movie-header></movie-header>
+
+      <div class="searchDiv">
+        <h1>전세계 인기 영화를 손쉽게 찾아보세요</h1>
+        <form class="searchDivForm">
+          <input type="text" id="searchDivInput" placeholder="영화제목을 입력해주세요" autofocus />
+          <button id="searchDivBtn">영화 검색</button>
+        </form>
+      </div>
+      <div class="dropdown">
+        <label for="sort">정렬:</label>
+        <select id="sort">
+          <option value="default">기본순</option>
+          <option value="title">제목순</option>
+          <option value="rating">별점높은순</option>
+        </select>
+      </div>
+      <div class="content" id="eiga"></div>
+      <script type="module">
+        import { handleSortChange } from "./src/sort.js";
+  
+        const sortDropdown = document.getElementById("sort");
+        sortDropdown.addEventListener("change", (event) => {
+          handleSortChange(event.target.value);
+        });
+      </script>
+    </body>
+
     <div class="content" id="eiga"></div>
-    <script type="module">
-      import { handleSortChange } from "./src/sort.js";
-
-      const sortDropdown = document.getElementById("sort");
-      sortDropdown.addEventListener("change", (event) => {
-        handleSortChange(event.target.value);
-      });
-    </script>
   </body>
 </html>
