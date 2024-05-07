@@ -99,7 +99,10 @@ const handleDeleteComment = (parentDiv) => {
   const id = parentDiv.dataset.index;
   const input_confirm_password = window.prompt("삭제를 위해 리뷰작성시 입력하였던 비밀번호를 입력하시오", "");
 
-  if (input_confirm_password !== data.comments[id].userpw) {
+  if (input_confirm_password === null) {
+    alert("리뷰 삭제가 취소되었습니다");
+    return;
+  } else if (input_confirm_password !== data.comments[id].userpw) {
     alert("사용자 비밀번호와 맞지 않습니다!");
     return;
   }
@@ -114,7 +117,11 @@ const handleDeleteComment = (parentDiv) => {
 const handleModifyComment = (index, parentDiv) => {
   const id = parentDiv.dataset.index;
   const input_confirm_password = window.prompt("수정을 위해 리뷰작성시 입력하였던 비밀번호를 입력하시오", "");
-  if (input_confirm_password !== data.comments[id].userpw) {
+
+  if (input_confirm_password === null) {
+    alert("리뷰 수정이 취소되었습니다");
+    return;
+  } else if (input_confirm_password !== data.comments[id].userpw) {
     alert("사용자 비밀번호와 맞지 않습니다!");
     return;
   }
@@ -141,5 +148,8 @@ const handleModifyComment = (index, parentDiv) => {
   const button_cancel = document.getElementById(`button-cancel-${index}`);
   button_cancel.addEventListener("click", () => {
     //취소
+    console.log("리뷰 수정을 취소하겠습니다");
+    alert("리뷰 수정을 취소하셨습니다");
+    callGetCommentData();
   });
 };
