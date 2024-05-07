@@ -7,17 +7,35 @@
     <title>Searching Movie Website</title>
 
     <link href="style/css/reset.css" rel="stylesheet" />
-
     <link href="style/css/main.css" rel="stylesheet" />
     <link href="style/css/color.css" rel="stylesheet" />
     <link href="style/css/header.css" rel="stylesheet" />
+
     <link rel="icon" href="style/image/icon.png" />
+
+    <script src="./src/sort.js" type="module"></script>
     <script src="./src/main.js" type="module"></script>
     <script src="./component/HeaderComponent.js" type="module"></script>
-    <body>
-      <movie-header></movie-header>
-
-      <div class="content" id="eiga"></div>
-    </body>
   </head>
+  <body>
+    <movie-header></movie-header>
+
+    <div class="dropdown">
+      <label for="sort">정렬:</label>
+      <select id="sort">
+        <option value="default">기본순</option>
+        <option value="title">제목순</option>
+        <option value="rating">별점높은순</option>
+      </select>
+    </div>
+    <div class="content" id="eiga"></div>
+    <script type="module">
+      import { handleSortChange } from "./src/sort.js";
+
+      const sortDropdown = document.getElementById("sort");
+      sortDropdown.addEventListener("change", (event) => {
+        handleSortChange(event.target.value);
+      });
+    </script>
+  </body>
 </html>

@@ -31,6 +31,7 @@ export const callGetMoviesAPI = async () => {
     }));
     displayMovieData(filteredMovies);
     saveMovieData(filteredMovies);
+    return filteredMovies;
   } catch (err) {
     $content.innerHTML = `<h3 id="error">API 가져오는데 문제가 생겼습니다</h3>`;
     console.error(err);

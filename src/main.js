@@ -1,3 +1,5 @@
+// main.js
+
 import { callGetMoviesAPI, displayMovieData } from "./movieAPI.js";
 import { search_movie } from "./search.js";
 
