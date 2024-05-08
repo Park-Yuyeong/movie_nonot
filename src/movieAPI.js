@@ -54,13 +54,9 @@ export const displayMovieData = (movie_data) => {
     return (_movie_list += `
       <div id="cardDiv" class="card">
         <a href="detail.html?title=${cur_movies.title}">
-        <img src="https://image.tmdb.org/t/p/w500${cur_movies.poster_path}" id="img"/>
-        <div id="overviewDiv">
-          <p id="overview">${cur_movies.overview}</p>
-        </div>
+        <img id="img" src="https://image.tmdb.org/t/p/w500${cur_movies.poster_path}"/>
+        <p id="vote">⭐ ${count}</p>
         <h3 id="title">${cur_movies.title}</h3>
-        <p id="vote">${total} (${count})</p>
-        <p id="language">language : ${cur_movies.original_language}</p>
       </div>
       `);
   }, "");
