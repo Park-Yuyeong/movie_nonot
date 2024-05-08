@@ -45,19 +45,20 @@
     <!--<div class="parent-comment">-->
       <form id="commentTarget">
         <div class="comment-input-container">
-        <div class="inputGroup">
-          <input type="text" placeholder="작성자 이름을 적어주세요" id="input-user-name" style="margin-right: 5px" />
-          <div class="name-failure-message hide font">작성자명을 두글자이상 입력해주세요</div>
+          <div class="user-input">
+          <input  type="text" placeholder="작성자 이름을 적어주세요" id="input-user-name" style="margin-right: 5px" />
+          <div class="name-failure-message hide font">두글자이상 입력해주세요</div>
+        </div>
+        <div class="user-input">
           <input type="text" placeholder="비밀번호를 적어주세요" id="input-user-password" />
           <div class="pw-failure-message hide font">숫자 4글자를 입력해주세요</div>
         </div>
         </div>
-        <div class="comment-input-container">
           <textarea type="text" placeholder="리뷰 내용을 적어주세요" id="input-comment"></textarea>
           <div class="rv-failure-message hide font">리뷰를 10글자 이상 입력해주세요</div>
-        </div>
-        <button class="btn" id="button-comment">리뷰작성</button>
+        <button class="btn" id="button-comment" style="background-color: #5956F5;">리뷰작성</button>
       </form>
+
       <div id="content-comment"></div>
     </div>
   <!---</div>-->
