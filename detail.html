@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="./style/css/reset.css" />
     <link rel="stylesheet" href="./style/css/detail.css" />
     <link rel="stylesheet" href="./style/css/comment.css" />
+    
     <link href="style/css/header.css" rel="stylesheet" />
     <link href="style/css/color.css" rel="stylesheet" />
+    <link href="style/css/background.css" rel="stylesheet" />
+
     <script type="module" src="./src/detail.js"></script>
     <script type="module" src="./component/HeaderComponent.js"></script>
     <script type="module" src="./src/validation.js"></script>
@@ -42,11 +45,9 @@
     <!--<div class="parent-comment">-->
       <form id="commentTarget">
         <div class="comment-input-container">
-          <div class="inputGroup">
-          <input type="text" placeholder="작성자 이름을 적어주세요" id="input-user-name" autocomplete="off" />
-          <div class="name-failure-message hide font">세글자이상 입력해주세요</div>
-        </div>
         <div class="inputGroup">
+          <input type="text" placeholder="작성자 이름을 적어주세요" id="input-user-name" style="margin-right: 5px" />
+          <div class="name-failure-message hide font">작성자명을 두글자이상 입력해주세요</div>
           <input type="text" placeholder="비밀번호를 적어주세요" id="input-user-password" />
           <div class="pw-failure-message hide font">숫자 4글자를 입력해주세요</div>
         </div>
