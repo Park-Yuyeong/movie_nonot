@@ -1,0 +1,320 @@
+[33mcommit 7ee74675122102c7cfd50668982b3966a9558493[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mvalidation[m[33m)[m
+Author: youseon <thesun6201@gmail.com>
+Date:   Fri May 3 20:08:24 2024 +0900
+
+    리뷰 유효성검사
+
+[33mcommit 510e52bf5658e15a7e88f5abd31181ee77db550b[m
+Author: youseon <thesun6201@gmail.com>
+Date:   Fri May 3 19:37:47 2024 +0900
+
+    리뷰내 유효성 검사. 1.작성자명:세글자이상 2.비밀번호:숫자4글자 3.리뷰:10글자이상 4.리뷰작성버튼:모든 인풋항목이 채워져 있지 않으면 비활성화. 인풋항목 조건에 따라 활성화 on/off (활성화 비활성화에 따른 ui 변경필요)
+
+[33mcommit 1814a8052057cfe07a0a6d18ea5613e1799b6f8b[m
+Author: delim <tdixxgidt@gmail.com>
+Date:   Fri May 3 17:46:25 2024 +0900
+
+    header 컴포넌트 스타일 적용
+
+[33mcommit a084d5f58bc6bfc600241b958ad6eede2590d6cf[m[33m ([m[1;31morigin/header[m[33m)[m
+Merge: 8eea4e7 158de8b
+Author: Park-Yuyeong <54975374+Park-Yuyeong@users.noreply.github.com>
+Date:   Fri May 3 17:01:26 2024 +0900
+
+    Merge pull request #7 from Eunyoung-Jo/feature-comment
+    
+    Feature comment
+
+[33mcommit 158de8b5611eb1e5af21d0e067951624973a255a[m[33m ([m[1;31morigin/feature-comment[m[33m)[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Fri May 3 17:00:27 2024 +0900
+
+    충돌 해결
+
+[33mcommit 468d635b70346586320bee55ff36e9d8f2dd8d98[m
+Merge: 027a225 8eea4e7
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Fri May 3 16:58:29 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into feature-comment
+
+[33mcommit 8eea4e7feb50803dfb5837fefbe38e63368a67fc[m
+Merge: aed1fdb 7dcd2ed
+Author: Park-Yuyeong <54975374+Park-Yuyeong@users.noreply.github.com>
+Date:   Fri May 3 16:15:59 2024 +0900
+
+    Merge pull request #6 from Eunyoung-Jo/search
+    
+    Search
+
+[33mcommit 7dcd2ed8446da1748f8d8f7237924ebdc378ba8f[m[33m ([m[1;31morigin/search[m[33m)[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Fri May 3 16:12:42 2024 +0900
+
+    헤더 컴포넌트 구현, 헤더에 검색 이벤트 등 추가
+
+[33mcommit 027a225d31df355f09c8a954fb69ffd5fd0003b2[m
+Author: leeejin <asd72621@naver.com>
+Date:   Fri May 3 14:47:30 2024 +0900
+
+    리뷰 기능 끝, 수정버튼 누르고 취소눌렀을때 컴포넌트만 바꾸면 됩니다
+
+[33mcommit 66f5c232e9208531db328ed1f827acaec5687be4[m
+Merge: 4707a27 aed1fdb
+Author: leeejin <asd72621@naver.com>
+Date:   Fri May 3 14:45:53 2024 +0900
+
+    리뷰 기능 끝, 수정버튼 누르고 취소눌렀을때 컴포넌트만 바꾸면 됩니다
+
+[33mcommit 85b5f5e6d40c7c8847de5d86418c0b371cee1f0c[m
+Merge: e8107e3 aed1fdb
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Fri May 3 12:50:24 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into search
+
+[33mcommit e8107e31090f950553f350993b1a1f112671ca5a[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Fri May 3 12:50:17 2024 +0900
+
+    주석 추가
+
+[33mcommit aed1fdbac8f5307e6637f809d7f266d87f8ac145[m[33m ([m[1;31morigin/validation[m[33m, [m[1;32mdev[m[33m)[m
+Author: delim <tdixxgidt@gmail.com>
+Date:   Fri May 3 12:32:42 2024 +0900
+
+    주석 해제
+
+[33mcommit c1ed1497739ec0dcbc9e432f15ed95d54af85f79[m[33m ([m[1;31morigin/detail[m[33m)[m
+Author: delim <tdixxgidt@gmail.com>
+Date:   Fri May 3 12:14:44 2024 +0900
+
+    헤더 변경
+
+[33mcommit 4707a2763f0140621ec11fad61c0a9c3cd04c349[m
+Author: leeejin <asd72621@naver.com>
+Date:   Fri May 3 12:02:18 2024 +0900
+
+    일단 같은 화면에서 새로고침하면 댓글 저장성공이지만 다른페이지로 갔다가 들어오면 초기화됨
+
+[33mcommit 2774bf84ba76fb66db43e39238cfea82b5578f5c[m
+Merge: 201b388 e129279
+Author: leeejin <asd72621@naver.com>
+Date:   Fri May 3 11:53:56 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into feature-comment
+
+[33mcommit e1292794dd93de9e204754d5306b7d2e8c3547c1[m
+Merge: 8e7baed 2c2357a
+Author: Park-Yuyeong <54975374+Park-Yuyeong@users.noreply.github.com>
+Date:   Fri May 3 11:42:34 2024 +0900
+
+    Merge pull request #5 from Eunyoung-Jo/search
+    
+    main 검색 이벤트 핸들러 수정 & 영화 데이터 로컬에 있으면 API 안 불러오기
+
+[33mcommit 2c2357a92df8c0f97d0aade9e10c60d30b8fac10[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Fri May 3 11:39:00 2024 +0900
+
+    main 검색 이벤트 핸들러 수정 & 영화 데이터 로컬에 있으면 API 안 불러오기
+
+[33mcommit 201b3888eaecb851eddecf8db846fa6d2a789ab0[m
+Author: leeejin <asd72621@naver.com>
+Date:   Fri May 3 11:27:49 2024 +0900
+
+    댓글 수정완료 초기화 문제 해결해야함
+
+[33mcommit cd861aa2113ec21753d51dd4a74409eafbc4c80c[m
+Merge: e515769 8e7baed
+Author: leeejin <asd72621@naver.com>
+Date:   Fri May 3 11:07:29 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into feature-comment
+
+[33mcommit 8e7baed4870af1fd141decd66f892df55e451826[m
+Merge: c74587d 7d6c8c4
+Author: Park-Yuyeong <54975374+Park-Yuyeong@users.noreply.github.com>
+Date:   Fri May 3 10:00:25 2024 +0900
+
+    Merge pull request #4 from Eunyoung-Jo/API
+    
+    autofocus&검색버튼 포인터 적용
+
+[33mcommit e515769f1730c7893aa70d11112cc9c3d54457af[m
+Author: leeejin <asd72621@naver.com>
+Date:   Thu May 2 21:13:52 2024 +0900
+
+    페이지 이동 버그 수정완료
+
+[33mcommit 4d6fd9afee3b92464bed79513ee3e911ef69a6be[m
+Merge: 2bec6da c74587d
+Author: leeejin <asd72621@naver.com>
+Date:   Thu May 2 20:45:43 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into feature-comment
+
+[33mcommit 7d6c8c485feae09976e09dbb2232559a4201101e[m[33m ([m[1;31morigin/API[m[33m)[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Thu May 2 20:43:12 2024 +0900
+
+    간단 수정
+
+[33mcommit 2bec6da12ece18373be8f89bfb79a1783edbe1de[m
+Author: leeejin <asd72621@naver.com>
+Date:   Thu May 2 20:38:03 2024 +0900
+
+    문제 발생 :객체안에 []가 추가 안됨, form으로 댓글 누르면 빈페이지 나옴
+
+[33mcommit 52ae065bfac796edb86e1673deda5f66625f25b2[m
+Merge: 45c44cd c74587d
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Thu May 2 20:17:45 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into API
+
+[33mcommit c74587d86376d69e1b69c0f9bcc6f8e7cd92fad8[m
+Author: delim <tdixxgidt@gmail.com>
+Date:   Thu May 2 19:38:06 2024 +0900
+
+    language 추가
+
+[33mcommit 45c44cd5213341b9e7c10f14dd2b911a3d65e9a0[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Thu May 2 19:27:23 2024 +0900
+
+    상세페이지 검색창 autofocus, 검색 버튼 pointer 적용
+
+[33mcommit b270fa2e75a0739d97f57c19128afd026cd9f263[m
+Merge: 726320b f342a67
+Author: leeejin <asd72621@naver.com>
+Date:   Thu May 2 19:07:45 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into feature-comment
+
+[33mcommit f342a6780b93ad00d671c83730a92023223b2759[m
+Merge: 3533cb3 8e29b6d
+Author: Park-Yuyeong <54975374+Park-Yuyeong@users.noreply.github.com>
+Date:   Thu May 2 17:53:51 2024 +0900
+
+    Merge pull request #3 from Eunyoung-Jo/API
+    
+    Api - 상세페이지 API 데이터 불러오기
+
+[33mcommit 8e29b6d8c421fa78b5ea7af90d17e8e749d1515d[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Thu May 2 17:42:43 2024 +0900
+
+    detail 페이지에 영화 데이터 붙이기 완료
+
+[33mcommit 726320b37b85719c65da67da87f97d0b06b291a5[m
+Author: leeejin <asd72621@naver.com>
+Date:   Thu May 2 17:37:36 2024 +0900
+
+    날짜 형식 수정 및 텍스트에리아 크기 고정
+
+[33mcommit 504d1c953956d3b9b2ce0e7eb60a2eddc1fdb5ce[m
+Author: leeejin <asd72621@naver.com>
+Date:   Thu May 2 17:34:16 2024 +0900
+
+    댓글 밑에 줄 추가 및 디자인 수정
+
+[33mcommit 12b4aef85d3c7033dce0c03a7a324b730325e73f[m
+Merge: 30c4af7 3533cb3
+Author: leeejin <asd72621@naver.com>
+Date:   Thu May 2 17:31:22 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into feature-comment
+
+[33mcommit 5eee4b4f5e620849d251b60877cb1ed6664da6ba[m
+Merge: 1961d28 3533cb3
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Thu May 2 17:25:12 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into API
+
+[33mcommit 1961d281061faa0a51cd19e3c6ec1e1a1cefe0e7[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Thu May 2 17:23:31 2024 +0900
+
+    카드 클릭 시 상세 페이지로 넘어가게 구현
+
+[33mcommit 3533cb3c6843a1525c1a0df02f2df93567786218[m
+Author: delim <tdixxgidt@gmail.com>
+Date:   Thu May 2 16:25:44 2024 +0900
+
+    영화 상세페이지 추가
+
+[33mcommit 30c4af77e8da73793c56a089b01d64a021d9a409[m
+Author: leeejin <asd72621@naver.com>
+Date:   Thu May 2 15:37:49 2024 +0900
+
+    원래 프로젝트에 댓글 추가 -> 수정필요
+
+[33mcommit aed0707472cc6152ff75c2f225796ad1f4a7bd4c[m
+Merge: 4d88b2c 4617886
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Wed May 1 20:22:06 2024 +0900
+
+    Merge branch 'dev' of https://github.com/Eunyoung-Jo/movie_nonot into API
+
+[33mcommit 4d88b2c529b669ef02bafc064f1febb18787b5e6[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Wed May 1 20:19:59 2024 +0900
+
+    autofocus적용 & 메인 주소 수정
+
+[33mcommit 46178861dfd08ad16e7effacfc7f543ab04daec6[m
+Merge: 10920f1 3d1a8a5
+Author: eunyoung <82076033+Eunyoung-Jo@users.noreply.github.com>
+Date:   Wed May 1 19:06:29 2024 +0900
+
+    Merge pull request #2 from Eunyoung-Jo/reset
+    
+    css 기본 설정
+
+[33mcommit 3d1a8a5eeffa5e4b88e0ac11fd3117d89021b8e4[m[33m ([m[1;31morigin/reset[m[33m)[m
+Author: Eunyoung-Jo <82076033+Eunyoung-Jo@users.noreply.github.com>
+Date:   Wed May 1 19:02:44 2024 +0900
+
+    css 기본 설정
+
+[33mcommit 1bc50f2d64fbea96c9c31503953c6d9f87691e66[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Wed May 1 17:48:01 2024 +0900
+
+    create: movie class
+
+[33mcommit 10920f16e4cd10982a9ec70fc0efafa730792b3b[m
+Merge: 507bc46 abaee49
+Author: eunyoung <82076033+Eunyoung-Jo@users.noreply.github.com>
+Date:   Wed May 1 16:01:45 2024 +0900
+
+    Merge pull request #1 from Eunyoung-Jo/API
+    
+    준비작업: js 파일 분리
+
+[33mcommit abaee49e5f373ea44306fe4fb27fa22367641799[m
+Author: Park-Yuyeong <dbduda1@kookmin.ac.kr>
+Date:   Wed May 1 15:44:04 2024 +0900
+
+    준비작업: js 파일 분리
+
+[33mcommit 507bc466b7058c75208e2cc2d35fe0d2a45f1c59[m[33m ([m[1;31morigin/main[m[33m)[m
+Merge: 64d57fa 911aa43
+Author: Eunyoung-Jo <82076033+Eunyoung-Jo@users.noreply.github.com>
+Date:   Wed May 1 12:17:21 2024 +0900
+
+    Merge branch 'main' of https://github.com/Eunyoung-Jo/movie_nonot
+
+[33mcommit 911aa4331492137988af8c18c6700799b97f0028[m
+Author: eunyoung <82076033+Eunyoung-Jo@users.noreply.github.com>
+Date:   Wed May 1 12:08:42 2024 +0900
+
+    Initial commit
+
+[33mcommit 64d57fa540b4ad4ed62642a31d1a34ff363d029e[m
+Author: Eunyoung-Jo <82076033+Eunyoung-Jo@users.noreply.github.com>
+Date:   Wed May 1 12:05:57 2024 +0900
+
+    초기 코드

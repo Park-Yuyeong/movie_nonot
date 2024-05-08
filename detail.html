@@ -16,6 +16,7 @@
   <body>
     <movie-header></movie-header>
     <!--  contents area -->
+    <div class="detailBox">
     <div class="center_wrapper">
       <div id="contents" class="contents">
         <img
@@ -24,33 +25,41 @@
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_5lsZDN7j-YDlrEpupBOTwcNFxsa4puKyVW5g22cOB2WigVnM06932UkUaA&s"
           alt="이미지를 불러올 수 없습니다."
         />
-        <div>
+        <div class="movieText">
           <div class="title" id="title"></div>
+          <div class="moviesub">
           <div class="grade" id="grade">평점:</div>
-          <div class="language" id="language">언어:</div>
-          <div class="release_date" id="release_date">개봉일:</div>
+          <div class="language" id="language"></div>
+          <div class="release_date" id="release_date"></div>
+        </div>
+        <div class="line"></div>
           <div class="description" id="description"></div>
         </div>
       </div>
     </div>
 
     <!--  comment area -->
-    <div class="parent-comment">
+    <!--<div class="parent-comment">-->
       <form id="commentTarget">
         <div class="comment-input-container">
-          <input type="text" placeholder="작성자 이름을 적어주세요" id="input-user-name" style="margin-right: 5px" />
-          <div class="name-failure-message hide font">작성자명을 세글자이상 입력해주세요</div>
+          <div class="inputGroup">
+          <input type="text" placeholder="작성자 이름을 적어주세요" id="input-user-name" autocomplete="off" />
+          <div class="name-failure-message hide font">세글자이상 입력해주세요</div>
+        </div>
+        <div class="inputGroup">
           <input type="text" placeholder="비밀번호를 적어주세요" id="input-user-password" />
           <div class="pw-failure-message hide font">숫자 4글자를 입력해주세요</div>
+        </div>
         </div>
         <div class="comment-input-container">
           <textarea type="text" placeholder="리뷰 내용을 적어주세요" id="input-comment"></textarea>
           <div class="rv-failure-message hide font">리뷰를 10글자 이상 입력해주세요</div>
-          <button class="btn" id="button-comment">리뷰작성</button>
         </div>
+        <button class="btn" id="button-comment">리뷰작성</button>
       </form>
       <div id="content-comment"></div>
     </div>
+  <!---</div>-->
     <script src="/src/comment.js"></script>
   </body>
 </html>
