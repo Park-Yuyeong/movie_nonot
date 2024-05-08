@@ -1,6 +1,5 @@
 const urlParams = new URLSearchParams(window.location.search);
 const detailMovieTitle = urlParams.get("title"); // 현재 상세페이지 영화 제목
-
 const $input_user_name = document.getElementById("input-user-name"); // 사용자 이름
 const $input_user_password = document.getElementById("input-user-password"); //사용자 비밀번호
 const $input_comment = document.getElementById("input-comment"); //댓글 인풋
@@ -19,7 +18,9 @@ const addCommentsObject = async () => {
 /**댓글 불러오기 및 사용자 확인*/
 const callGetCommentData = () => {
   if (!data.comments.length) {
-    $content_comment.innerHTML = "<h3>리뷰가 존재하지 않습니다! 리뷰를 남겨주세요</h3>";
+    $content_comment.innerHTML = `<div style='text-align: center'>
+    <img src='../style/image/noReview.png' alt='리뷰없음' width='50%' />
+  </div>`;
     return;
   }
   $content_comment.innerHTML = data.comments.reduce((prev, cur, index) => {
