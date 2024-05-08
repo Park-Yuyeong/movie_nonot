@@ -56,9 +56,7 @@
      * 영화 검색 시 → 빈 문자열 검색 시 `alert` 메세지
      * 댓글 작성 시 → validation rules에 맞지 않는 리뷰 작성 시 `alert` 메세지
   6. JavaScript 문법 요소를 이용하여 구현
-
-  <br>
-
+     
   #### (2) 선택요구사항
   * CSS
     * flex 사용하기
@@ -80,6 +78,14 @@
 
 <img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 
+<br>
+
 ## Wireframe
+<img src="https://velog.velcdn.com/images/u025/post/713eeb35-3fef-4b26-bbbb-edbc1fa5abe3/image.png" alt="이미지오류">
 
 ## 주요 기능
+* TMDB 인기 영화 콜렉션 조회
+* 영화 제목순, 별점 높은 순으로 영화 리스트 조회 가능
+* 영화 제목을 통한 영화 검색 가능
+* 영화 카드 클릭시 해당 영화 상세 정보 조회
+* 영화 상세 페이지에서 해당 영화에 대한 댓글 작성, 수정, 삭제 가능능
