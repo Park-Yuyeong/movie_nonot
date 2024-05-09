@@ -1,0 +1,95 @@
+div{
+    box-sizing: border-box;
+}
+input,textarea{
+    padding:10px;
+    outline: none;
+    resize: none;
+}
+.btn{
+    padding:10px;
+    border:none;
+    background-color: var(--black-color);
+    border-radius: 10px;
+    color:var(--white-color);
+    cursor: pointer;
+}
+.btn-edit{
+    border:none;
+    padding:10px;
+    background-color:var(--white-color);
+    color:var(--grey-color);
+    cursor:pointer;
+}
+.text-sub{
+    color:var(--grey-color);
+    font-size: 14px;
+    font-weight: normal;
+}
+#confirmDiv{
+    display: flex;
+    align-items: center;
+    height:40px;
+    h4{
+        flex-grow: 1;
+    }
+}
+.parent-comment{
+    width:70%;
+    margin:auto;
+}
+#content-comment{
+    width:100%;
+}
+#button-comment{
+    background-color: #5956F5
+}
+.comment-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:5px;
+}
+.user-input{
+    width:50%;
+    position:relative;
+   .name-failure-message, 
+   .pw-failure-message{
+    position:absolute;
+    top:7px;
+    right:40px;
+   }
+   input{
+    min-width:90%;
+   }
+}
+
+#input-comment{
+    flex-grow:1;
+    margin-right: 5px;
+}
+.hr{
+    margin-top: 30px;
+    border: 1px solid var(--lightgrey-color);
+}
+@media screen and (max-width:568px) {
+    .parent-comment{
+        width:100%;
+        
+    }
+    .user-input{
+        width:50%;
+        position:relative;
+       .name-failure-message, 
+       .pw-failure-message{
+        position:absolute;
+        top:-10px;
+        left:0px;
+        right:0px;
+       }
+       input{
+        width:80%;
+       }
+    }
+    
+}

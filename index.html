@@ -3,27 +3,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Searching Movie Website</title>
+
+    <link href="style/css/reset.css" rel="stylesheet" />
     <link href="style/css/main.css" rel="stylesheet" />
     <link href="style/css/color.css" rel="stylesheet" />
+    <link href="style/css/header.css" rel="stylesheet" />
+    <link href="style/css/background.css" rel="stylesheet" />
+
     <link rel="icon" href="style/image/icon.png" />
-    <body>
-      <nav class="menubar-top">
-        <img id="representive-mark" src="style/image/icon.png" />
-        <div class="search-div">
-          <input type="text" placeholder="search..." id="searchText" />
-          <img
-            src="style/image/search_icon.png"
-            class="icon-search"
-            id="handleSearch"
-            alt="검색 아이콘"
-          />
-        </div>
-      </nav>
 
-      <div class="content" id="eiga"></div>
-
-      <script src="main.js"></script>
-    </body>
+    <script src="./src/sort.js" type="module"></script>
+    <script src="./src/main.js" type="module"></script>
+    <script src="./component/HeaderComponent.js" type="module"></script>
   </head>
+    <body>
+      <movie-header></movie-header>
+
+      <div class="searchDiv">
+        <h1>전세계 인기 영화를 손쉽게 찾아보세요</h1>
+        <form class="searchDivForm">
+          <input type="text" id="searchDivInput" placeholder="영화제목을 입력해주세요" autofocus />
+          <button id="searchDivBtn">영화 검색</button>
+        </form>
+      </div>
+      <div class="dropdown">
+        <label for="sort"></label>
+        <select id="sort">
+          <option value="default">기본순</option>
+          <option value="title">제목순</option>
+          <option value="rating">별점높은순</option>
+        </select>
+      </div>
+      <div class="content" id="eiga"></div>
+      <script type="module">
+        import { handleSortChange } from "./src/sort.js";
+  
+        const sortDropdown = document.getElementById("sort");
+        sortDropdown.addEventListener("change", (event) => {
+          handleSortChange(event.target.value);
+        });
+      </script>
+    </body>
 </html>

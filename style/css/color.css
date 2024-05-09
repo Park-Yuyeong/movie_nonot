@@ -2,13 +2,8 @@
   --background-color: #89b2e9;
   --light-color: #cedff6;
   --white-color: white;
-}
-@font-face {
-  font-family: "Pretendard";
-  src: url("../fonts/Pretendard-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Pretendard-extrabold";
-  src: url("../fonts/Pretendard-ExtraBold.woff2") format("woff2");
+  --black-color: black;
+  --grey-color: grey;
+  --lightgrey-color: rgb(216, 216, 216);
+  --button-color: #5956f5;
 }
