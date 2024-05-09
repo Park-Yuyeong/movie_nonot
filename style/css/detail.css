@@ -126,11 +126,11 @@ body {
 /*input form ui*/
 .comment-input-container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.comment-input-container input[type="text"] {
-  flex: 1;
-  max-width: 15rem;
+.comment-input-container input {
   outline: none;
   border: 1px solid #E1E1E1;
   background-color: transparent;
@@ -138,7 +138,7 @@ body {
   background-color: #ffffff;
 }
 
-.comment-input-container input[type="text"]:focus {
+.comment-input-container input:focus {
   border: 1px solid #5956F5;
 }
 

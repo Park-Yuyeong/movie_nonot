@@ -45,22 +45,20 @@ input,textarea{
     background-color: #5956F5
 }
 .comment-input-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+   
     padding:5px;
 }
 .user-input{
-    width:50%;
+    width:45%;
     position:relative;
    .name-failure-message, 
    .pw-failure-message{
     position:absolute;
     top:7px;
-    right:40px;
+    right:5px;
    }
    input{
-    min-width:90%;
+    width:100%;
    }
 }
 
