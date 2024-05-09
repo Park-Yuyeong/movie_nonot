@@ -23,13 +23,9 @@ const movies = [
   { title: "C", vote_average: 9.2 }
 ];
 
-console.log("Sorted by title:", sortByTitle(movies));
-console.log("Sorted by rating:", sortByRating(movies));
-
 const handleSortChange = async (value) => {
   try {
     const movies = await callGetMoviesAPI();
-    console.log("Movies from callGetMoviesAPI:", movies); // Movies from callGetMoviesAPI: undefined
 
     switch (value) {
       case "default":
@@ -47,7 +43,7 @@ const handleSortChange = async (value) => {
         displayMovieData(movies);
     }
   } catch (err) {
-    console.error(err);
+    alert("정렬 기능 오류가 발생했습니다");
   }
 };
 

@@ -12,7 +12,6 @@ const $dropdown = document.querySelector(".dropdown");
 
 // 이미 불러왔던 영화 데이터가 있으면 안 불러오도록
 if (JSON.parse(localStorage.getItem("movies")) === null) {
-  console.log("----영화 데이터를 불러옵니다----");
   callGetMoviesAPI();
 } else if (searchMovies === null) {
   const filteredMovieData = movies.map((movie) => JSON.parse(localStorage.getItem(movie)));

@@ -17,8 +17,6 @@ export const callGetMoviesAPI = async () => {
     const response = await fetch(apiUrl, options);
     const data = await response.json();
 
-    console.log(data.results);
-
     const filteredMovies = data.results.map((movies) => ({
       //필요한 정보만 filteredMovies에 넣는다
       original_language: movies.original_language,
@@ -34,14 +32,11 @@ export const callGetMoviesAPI = async () => {
     return filteredMovies;
   } catch (err) {
     $content.innerHTML = `<h3 id="error">API 가져오는데 문제가 생겼습니다</h3>`;
-    console.error(err);
   }
 };
 
 // 데이터 필터링 함수
 export const displayMovieData = (movie_data) => {
-  console.log("displayMovieData() 실행");
-  console.log(movie_data);
   if (!movie_data.length) {
     $content.innerHTML = `<h3 id="error">해당 검색어에 대한 데이터가 존재하지 않습니다! </h3>`;
     return;
