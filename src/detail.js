@@ -3,8 +3,6 @@ const detailMovieTitle = urlParams.get("title"); // 현재 상세페이지 영�
 
 const movie = JSON.parse(localStorage.getItem(detailMovieTitle));
 
-console.log(movie);
-
 const $thumbnail = document.getElementById("thumbnail");
 const $title = document.getElementById("title");
 const $description = document.getElementById("description");

@@ -1,5 +1,4 @@
 body {
   background-image: url(../../style/image/layer1.png), url(../../style/image/layer2.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-size: cover;
 }

@@ -47,7 +47,6 @@ window.onload = function () {
   function activeEvent() {
     switch (!(userName.value && userPassword.value && reviewInput.value)) {
       case true:
-        console.log(userName.value, reviewInput.value);
         rvButton.disabled = true;
         break;
       case false:

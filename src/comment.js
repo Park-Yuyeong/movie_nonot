@@ -149,7 +149,6 @@ const handleModifyComment = (index, parentDiv) => {
   const button_cancel = document.getElementById(`button-cancel-${index}`);
   button_cancel.addEventListener("click", () => {
     //취소
-    console.log("리뷰 수정을 취소하겠습니다");
     alert("리뷰 수정을 취소하셨습니다");
     callGetCommentData();
   });
