@@ -1,6 +1,6 @@
 # 내일배움캠프 B-12조 (World Best Movie)
 ## 프로젝트 웹페이지 링크
-> 🔗 <https://eunyoung-jo.github.io/movie_nonot/index.html>
+> 🔗 <https://park-yuyeong.github.io/movie_nonot/>
 
 <br>
 <br>
