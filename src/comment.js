@@ -20,7 +20,7 @@ const addCommentsObject = async () => {
 const callGetCommentData = () => {
   if (!data.comments.length) {
     $content_comment.innerHTML = `<div style='text-align: center'>
-    <img src='../style/image/noReview.png' alt='리뷰없음' width='50%' />
+    <img src='./style/image/noReview.png' alt='리뷰없음' width='50%' />
   </div>`;
     return;
   }
